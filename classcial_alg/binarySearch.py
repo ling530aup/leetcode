@@ -1,4 +1,3 @@
-
 '''
         解题报告。
 
@@ -8,6 +7,8 @@ Bug Free 人肉单元测试用例
     [0] 搜索 -1,  -0.5,  0,  0.5,  1
     [0,1] 搜索  -1, 0, 0.5, 1, 2
 '''
+
+
 def binary_search(arr, key):
     left = 0
     right = len(arr) - 1
@@ -48,7 +49,6 @@ if __name__ == '__main__':
     key = 3.5
     print(arr, 'find {}: '.format(key), binary_search(arr, key))
     print('-----------------------')
-
 
     arr = [3, 4, 5]
     key = 5
