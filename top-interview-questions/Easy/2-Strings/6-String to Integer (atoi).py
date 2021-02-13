@@ -14,7 +14,7 @@ class Solution:
         for i in range(len(s)):
             if not s[i].isnumeric():
                 break
-        if len(s)!=0 and (not s[i].isnumeric()):
+        if len(s) != 0 and (not s[i].isnumeric()):
             s = s[:i]
 
         if s == '':
