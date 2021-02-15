@@ -4,7 +4,6 @@ LeetCode 189. 旋转数组[中等难度]
 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
 
 进阶：
-
 尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。
 你可以使用空间复杂度为 O(1) 的 原地 算法解决这个问题吗？
 
@@ -13,20 +12,21 @@ LeetCode 189. 旋转数组[中等难度]
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 '''
-def rotate_right(nums):
-    tail = nums[len(nums) - 1]
-    for i in range(len(nums) - 2, -1, -1):
-        nums[i + 1] = nums[i]
-    nums[0] = tail
+def roatate_arr(arr,left,right):
+    i, j = left, right
+    while i < j:
+        arr[i], arr[j] = arr[j], arr[i]
+        i += 1
+        j -= 1
 
 
 def rotate(nums, k):
-    '''
-        用多次循环右移解决。 时间上市超时的。
-        正确思路，  一定存在一个有向图， 使得按秩序交换后，得到目标数组。  时间O(n) 空间O(1)
-    '''
-    for i in range(k):
-        rotate_right(nums)
+    """
+      Do not return anything, modify nums in-place instead.
+    """
+    roatate_arr(nums,0,len(nums)-1)
+    roatate_arr(nums,0,k%len(nums)-1)
+    roatate_arr(nums,k%len(nums),len(nums)-1)
 
 
 if __name__ == '__main__':
