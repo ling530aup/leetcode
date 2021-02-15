@@ -11,7 +11,8 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
 from collections import Counter
-
+from  functools import reduce
+from operator import xor
 
 # 方法1 懒人做法，调用Counter
 def singleNumber(nums):
@@ -29,7 +30,11 @@ def singleNumber2(nums):
             _set.add(item)
     return list(_set)[0]
 
+# 方法3
+# 使用异或
 
+def singleNumber3(nums):
+    return reduce(xor,nums)
 if __name__ == '__main__':
     assert singleNumber([4, 1, 2, 1, 2]) == 4
     assert singleNumber([2,2,1]） == 1
