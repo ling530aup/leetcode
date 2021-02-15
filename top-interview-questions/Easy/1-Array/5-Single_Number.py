@@ -15,7 +15,7 @@ from collections import Counter
 
 # 方法1 懒人做法，调用Counter
 def singleNumber(nums):
-    return min(Counter(nums).items(), key=lambda x:x[1])
+    return min(Counter(nums).items(), key=lambda x:x[1])[0]
 
 
 # 方法2
