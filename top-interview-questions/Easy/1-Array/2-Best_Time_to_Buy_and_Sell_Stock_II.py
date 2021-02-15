@@ -10,16 +10,14 @@ Leetcode 122 股票买卖的最佳时间
 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
-
+import numpy as np
 def maxProfit(prices):
     '''
         满足局部最优解合并就是全局最优解的特点。 贪心算法。  直接计算可以产生利润的相邻时间点， 把利润累加
+        Idea: prices数组的一阶差分为可能的交易利润。将其中正差分相加，即为结果。 
     '''
-    total = 0
-    for i in range(len(prices) - 1):
-        if prices[i + 1] > prices[i]:
-            total += prices[i + 1] - prices[i]
-    return total
+    diff = np.diff(np.array(prices))
+    return int(diff[diff>0].sum())
 
 
 if __name__ == '__main__':
