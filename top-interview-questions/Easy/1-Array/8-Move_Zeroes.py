@@ -4,6 +4,8 @@ LeetCode 283. 移动零(简单)
 输入: [0,1,0,3,12]
 输出: [1,3,12,0,0]
 '''
+
+
 def moveZeroes(nums):
     '''
     冒泡排序的一个变种。 i是当前挤出0后摆放的位置。   内循环j和冒泡内循环一样，像上冒泡，挤出0
@@ -17,5 +19,5 @@ def moveZeroes(nums):
 
 
 if __name__ == '__main__':
-    assert moveZeroes([0, 0, 1]) == [1,0,0]
-    assert moveZeroes([0,1,0,3,12]) == [1,3,12,0,0]
+    assert moveZeroes([0, 0, 1]) == [1, 0, 0]
+    assert moveZeroes([0, 1, 0, 3, 12]) == [1, 3, 12, 0, 0]
