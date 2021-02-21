@@ -1,21 +1,18 @@
 def lengthOfLongestSubstring(s: str) -> int:
-    _dict = {}
-    left = 0
     if not s:
-        print('@@@@')
         return 0
-
-    max_substr_len = 1
-    for right, char in enumerate(s):
-        if char in _dict:
-            left = _dict[char]
-        _dict[char] = right
-        max_substr_len = max(right - left, max_substr_len)
-    return max_substr_len + int(s[left] != s[right])
+    left = 0
+    lookup = set()
+    max_len = 0
+    for right in range(len(s)):
+        while s[right] in lookup:
+            lookup.remove(s[left])
+            left += 1
+        max_len = max(max_len, right - left + 1)
+        lookup.add(s[right])
+    return max_len
 
 
 if __name__ == '__main__':
     assert lengthOfLongestSubstring("abcabcbb") == 3
     assert lengthOfLongestSubstring("bbbb") == 1
-    print(lengthOfLongestSubstring('aab'))
-    print(lengthOfLongestSubstring('bbbb'))
