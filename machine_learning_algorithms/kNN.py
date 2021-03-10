@@ -1,19 +1,21 @@
 from collections import Counter
 import numpy as np
 
-
 class KNearestNeighbor:
 
     def __init__(self, k=5):
         self.k = k
 
-    def fit(self, X, y):
-        self._X_train = X
+    def fit(self, x, y):
+        self._x_train = x
         self._y_train = y
         return self
 
-    def predict(self, X_predict):
-        distances = [np.sum((x_train - X_predict) ** 2) ** 0.5 for x_train in self._X_train]
-        topK_index = np.argsort(distances)[:self.k]
-        topK = self._y_train[topK_index]
-        return Counter(topK).most_common(1)[0][0]
+    def predict(self, x):
+        distance = ((self._x_train[:,np.newaxis,:] - x[np.newaxis, :,:])**2).sum(axis=-1)
+        top_k_index = distance.argsort(axis=0)[:,:self.k]
+        top_k_class = self._y_train[top_index]
+        most_common_class = np.apply_along_axis(lambda x: Counter(x).most_common()[0][0], axis=1, arr=top_cls)
+        return most_common_class
+    
+ 
