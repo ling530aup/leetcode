@@ -1,4 +1,4 @@
-import numpy as np
+import random
 import copy
 class Solution:
 
@@ -17,7 +17,9 @@ class Solution:
         Returns a random shuffling of the array.
         """
         ls = copy.copy(self.nums)
-        np.random.shuffle(ls)
+        for i in range(len(ls)):
+            swap_i = random.randrange(i, len(ls))
+            ls[i], ls[swap_i] = ls[swap_i], ls[i]
         return ls
 
 
