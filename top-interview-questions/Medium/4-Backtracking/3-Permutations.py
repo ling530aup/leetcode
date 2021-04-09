@@ -1,16 +1,17 @@
-def dfs(n_left, n_right_march, pre, rst_set):
-    if n_left == 0 and n_right_march==0:
-        rst_set.add(pre)
-        return
-    if n_left>0:
-        dfs(n_left-1, n_right_march+1, pre+'[', rst_set)
-    if n_right_march>0:
-        dfs(n_left, n_right_march-1, pre+']', rst_set)
+from copy import copy
 
-
+def dfs(nums, used, path, rst_set):
+    if len(used) == len(nums):
+        rst_set.append(copy(path))
+    for num in nums:
+        if num not in used:
+            path.append(num)
+            used.add(num)
+            dfs(nums, used, path, rst_set)
+            used.remove(num)
+            path.pop()
+            
 if __name__ == '__main__':
-    print('------------------')
-    rst_set = set()
-    pre = ''
-    dfs(2, 0, pre, rst_set)
+    rst_set = []
+    dfs([1,2,3], set(), [], rst_set)
     print(rst_set)
