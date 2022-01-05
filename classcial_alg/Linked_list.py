@@ -1,4 +1,4 @@
-class Note:
+class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -6,12 +6,12 @@ class Note:
 
 class Linked_list:
     def __init__(self, head):
-        self.head = Note(0)
+        self.head = Node(0)
         self.tail = self.head
         self.size = 0
 
     def append(self, x):
-        self.tail.next = Note(x)
+        self.tail.next = Node(x)
         self.tail = self.tail.next
         self.size = self.size + 1
 
