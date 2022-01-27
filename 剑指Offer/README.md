@@ -66,10 +66,10 @@ https://leetcode-cn.com/leetbook/read/illustrate-lcof/xz2hh7/
 * --剑指 Offer 57. 和为 s 的两个数字
 * --剑指 Offer 57 - II. 和为 s 的连续正数序列
 * --剑指 Offer 58 - I. 翻转单词顺序
-* 剑指 Offer 58 - II. 左旋转字符串
+* --剑指 Offer 58 - II. 左旋转字符串
 * 剑指 Offer 59 - I. 滑动窗口的最大值
 * 剑指 Offer 59 - II. 队列的最大值
-* 剑指 Offer 61. 扑克牌中的顺子
+* --剑指 Offer 61. 扑克牌中的顺子
 * 剑指 Offer 62. 圆圈中最后剩下的数字
 * --剑指 Offer 63. 股票的最大利润
 * --剑指 Offer 64. 求1+2+…+n
